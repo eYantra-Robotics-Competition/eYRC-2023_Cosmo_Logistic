@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+
+<!-- 
+*****************************************************************************************
+*
+*        =============================================
+*           Cosmo Logistic (CL) Theme (eYRC 2023-24)
+*        =============================================
+*
+*
+*  Filename:			        eyantra_warehouse.world
+*  Description:           Following world file describes warehouse world for gazebo environment.
+*  Created:				        12/07/2023
+*  Last Modified:	        12/07/2023
+*  Modified by:           Amit
+*  Author:				        e-Yantra Team
+*  Copyright (c):         2023 eYantra IITB 
+*  
+*****************************************************************************************
+ -->
+
+<sdf version="1.6">
+  <world name="default">
+
+    <gui>
+      <camera name="user_default">
+        <pose>-24.307 -9.572 4.851 0 0.071 0.316</pose>
+      </camera>
+    </gui>
+
+    <light name="light0" type="directional">
+      <pose frame="">0 -18.818 8 0.75 -0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+    </light>
+
+
+    <light name="light3" type="directional">
+      <pose frame="">3.9239 1.64974 4 0 1.2 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+    </light>
+
+
+    <light name="light5" type="directional">
+      <pose frame="">0.454419 12.4783 5 -0.8 0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+    </light>
+
+    <scene>
+		<shadows>false</shadows>
+		<ambient>0.5 0.5 0.5 1.0</ambient>
+    <grid>false</grid>    
+      <sky>        
+        <time>22</time>
+        <sunrise>20</sunrise>
+        <sunset>21</sunset>
+        <clouds>
+          <humidity>0</humidity>
+          <!-- <cloud_ambient>1.0 1.0 1.0 1.0</cloud_ambient> Not working -->
+        </clouds>        
+      </sky>
+    </scene>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+  <include>
+      <uri>model://moon_surface</uri>
+      <pose>0 0 -0.25 0 0 0</pose>
+	</include>
+
+  <include>
+      <uri>model://warehouse_boundary</uri>
+      <pose>0 0 -0.21 0 0 0</pose>
+	</include>
+
+  
+
+  <include>
+      <uri>model://rack</uri>
+      <name>rack1</name>
+      <pose>1.37 4.31 0.1 0 -0 -1.57</pose>
+	</include>
+
+
+  <include>
+      <uri>model://package_box</uri>
+      <name>package_box_1</name>
+      <pose>1.37 4.31 1.41 0 -0 3.14</pose>
+	</include>
+
+  <include>
+      <uri>model://rack_base</uri>
+      <name>rack_base2</name>
+      <pose>-4.28 3.74 0.004003 0 -0 0</pose>
+	</include>
+
+  <include>
+      <uri>model://rack</uri>
+      <name>rack2</name>
+      <pose>-4.28 3.74 0.1 0 -0 0</pose>
+	</include>
+
+  <include>
+      <uri>model://package_box</uri>
+      <name>package_box_2</name>
+      <pose>-4.28 3.74 1.11 0 -0 -1.57</pose>
+	</include>
+
+  <include>
+      <uri>model://rack</uri>
+      <name>rack3</name>
+      <pose>-3.37 4.53 0.004003 0 -0 1.57</pose>
+	</include>
+
+  <include>
+      <uri>model://rack</uri>
+      <name>rack4</name>
+      <pose>-3.59225 -8.88893 0.004003 0 0 1.57</pose>
+	</include>
+
+  <include>
+      <uri>model://rack</uri>
+      <name>rack5</name>
+      <pose>-4.072 -8.0 0.004003 0 0 3.14</pose>
+	</include>
+
+  <include>
+      <uri>model://rack</uri>
+      <name>rack6</name>
+      <pose>1.1604 -9.05174 0.004003 0 0 -1.57</pose>
+	</include>
+
+  <include>
+      <uri>model://rack_base</uri>
+      <name>rack_base7</name>
+      <pose>1.85586 -8.20426 0.004003 0 -0 3.14</pose>
+	</include>
+
+  <include>
+      <uri>model://rack</uri>
+      <name>rack7</name>
+      <pose>1.85586 -8.20426 0.1 0 -0 3.14</pose>
+	</include>
+
+  <include>
+      <uri>model://package_box</uri>
+      <name>package_box_7</name>
+      <pose>1.85586 -8.20426 0.800000 0 -0 1.57</pose>
+	</include>
+
+  <include>
+      <uri>model://rack</uri>
+      <name>rack8</name>
+      <pose>2.19 3.44 0 0 -0 0</pose>
+	</include>
+
+  <include>
+      <uri>model://aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>boxes</name>
+      <pose>-4.02 -2.62 0 0 -0 0</pose>
+	</include>
+
+  <include>
+      <uri>model://aws_robomaker_warehouse_DeskC_01</uri>
+      <name>desk</name>
+      <pose>-1.33 -6.52 0 0 -0 -1.57</pose>
+	</include>
+
+    <include>
+      <uri>model://aws_robomaker_warehouse_PalletJackB_01</uri>
+      <name>palletjab</name>
+      <pose>-2.97 -0.21 0 0 -0 -1.29</pose>
+	</include>
+
+  </world>
+</sdf>

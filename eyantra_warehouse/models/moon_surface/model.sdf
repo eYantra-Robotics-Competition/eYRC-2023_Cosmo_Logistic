@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!-- 
+*****************************************************************************************
+*
+*        =============================================
+*                  TBD Theme (eYRC 2023-24)
+*        =============================================
+*
+*
+*  Filename:			model.sdf
+*  Created:				13/07/2023
+*  Last Modified:	13/07/2023
+*  Modified by:   Amit
+*  Author:				e-Yantra Team
+*  
+*****************************************************************************************
+--> 
+<sdf version="1.6">
+  <model name="moon_surface">
+    <static>true</static>
+
+    <link name="link">
+      <pose>0 0 0.003 0 0 0</pose>
+
+      <!-- Removing collision of moon surface since we don't need it for performance -->
+      
+      <!-- <collision name="collision1">
+          <geometry>
+          <mesh><uri>model://moon_surface/meshes/moon_surface.dae</uri></mesh>
+            <box><size>100 100 0.5</size></box>
+          </geometry>      
+      </collision> -->
+
+
+      <visual name="visual1">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh><uri>model://moon_surface/meshes/moon_surface.dae</uri></mesh>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+        </material>
+        <pose>0 0 0 0 0 0</pose>
+        <transparency>0</transparency>
+      </visual>
+    </link>
+  </model>
+</sdf>
