@@ -1,43 +1,70 @@
-<?xml version="1.0"?>
-<!-- 
-*****************************************************************************************
-*
-*        =============================================
-*                  TBD Theme (eYRC 2023-24)
-*        =============================================
-*
-*
-*  Filename:			model.sdf
-*  Created:				12/07/2023
-*  Last Modified:	12/07/2023
-*  Modified by:   Amit
-*  Author:				e-Yantra Team
-*  
-*****************************************************************************************
---> 
-<sdf version="1.6">
-
-  <model name="rack">
-
-    <static>false</static>
-    <link name="link">
+<?xml version='1.0'?>
+<sdf version='1.7'>
+  <model name='rack'>
+    <link name='link'>
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <mass>1.87</mass>
         <inertia>
           <ixx>0.01857</ixx>
-          <ixy>0.00</ixy>
-          <ixz>0.00</ixz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
           <iyy>0.015598</iyy>
-          <iyz>0.00</iyz>
+          <iyz>0</iyz>
           <izz>0.00305</izz>
         </inertia>
       </inertial>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <pose>0 0 0 0 -0 0</pose>
+      <gravity>1</gravity>
 
+      <visual name='visual1'>
+        <cast_shadows>0</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://rack/meshes/rack.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <shader type='pixel'>
+            <normal_map>__default__</normal_map>
+          </shader>
+          <emissive>0 0 0 1</emissive>
+        </material>
+        <pose>0 0 0 0 -0 1.57</pose>
+        <transparency>0</transparency>
+      </visual>
+
+      <visual name='visual_2'>
+        <cast_shadows>0</cast_shadows>
+        <geometry>
+          <box>
+            <size>0.02 1 0.31</size>
+          </box>
+        </geometry>
+        <material>
+          <lighting>1</lighting>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+          <shader type='pixel'>
+            <normal_map>__default__</normal_map>
+          </shader>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.7 0.7 0.7 1</diffuse>
+          <specular>0.01 0.01 0.01 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+        <pose>-0.238 0 0.19 0 -0 0</pose>
+        <transparency>0</transparency>
+      </visual>
       <collision name='collision_4'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose>0 0 1.315 0 1.57 0</pose>
+        <pose>0 0 1.315 0 1.57 1.57</pose>
         <geometry>
           <box>
             <size>0.05 0.44 1</size>
@@ -89,11 +116,10 @@
           </contact>
         </surface>
       </collision>
-
       <collision name='collision_5'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose>0 0 0.98 0 1.57 0</pose>
+        <pose>0 0 0.98 0 1.57 1.57</pose>
         <geometry>
           <box>
             <size>0.05 0.448 1</size>
@@ -145,11 +171,10 @@
           </contact>
         </surface>
       </collision>
-
       <collision name='collision_6'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose>0 0 0.66 0 1.57 0</pose>
+        <pose>0 0 0.66 0 1.57 1.57</pose>
         <geometry>
           <box>
             <size>0.05 0.448682 1</size>
@@ -201,11 +226,10 @@
           </contact>
         </surface>
       </collision>
-
       <collision name='collision_3'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose>0 0 1.68 0 1.57 0</pose>
+        <pose>0 0 1.68 0 1.57 1.57</pose>
         <geometry>
           <box>
             <size>0.05 0.448682 1</size>
@@ -257,14 +281,13 @@
           </contact>
         </surface>
       </collision>
-
-      <collision name='collision_2'>
+      <collision name='collision_7'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose>-0.5 0 0.84 0 -0 0</pose>
+        <pose>0 0 0.34 0 1.57 1.57</pose>
         <geometry>
           <box>
-            <size>0.05 0.44 1.688</size>
+            <size>0.05 0.448682 1</size>
           </box>
         </geometry>
         <surface>
@@ -313,11 +336,10 @@
           </contact>
         </surface>
       </collision>
-
       <collision name='collision_1'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose>0.5 0 0.84 0 -0 0</pose>
+        <pose>0 0.5 0.84 0 -0 1.57</pose>
         <geometry>
           <box>
             <size>0.05 0.448682 1.68801</size>
@@ -369,14 +391,13 @@
           </contact>
         </surface>
       </collision>
-
-      <collision name='collision_7'>
+      <collision name='collision_2'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose>0 0 0.34 0 1.57 0</pose>
+        <pose>0 -0.5 0.84 0 -0 1.57</pose>
         <geometry>
           <box>
-            <size>0.05 0.448682 1</size>
+            <size>0.05 0.44 1.688</size>
           </box>
         </geometry>
         <surface>
@@ -425,11 +446,10 @@
           </contact>
         </surface>
       </collision>
-
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose>0 0.238 0.19 0 0 1.57</pose>
+        <pose>-0.238 0 0.19 0 -0 0</pose>
         <geometry>
           <box>
             <size>0.02 1 0.31</size>
@@ -481,40 +501,8 @@
           </contact>
         </surface>
       </collision>
-
-
-      <visual name="visual1">
-        <cast_shadows>false</cast_shadows>
-        <geometry>
-          <mesh><uri>model://rack/meshes/rack.dae</uri></mesh>
-        </geometry>
-      </visual>
-
-       <visual name='visual_2'>
-        <cast_shadows>0</cast_shadows>
-        <geometry>
-          <box>
-            <size>0.02 1 0.31</size>
-          </box>
-        </geometry>
-        <material>
-          <lighting>1</lighting>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
-          </script>
-          <shader type='pixel'>
-            <normal_map>__default__</normal_map>
-          </shader>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
-        <pose>0 0.238 0.19 0 0 1.57</pose>
-        <transparency>0</transparency>
-      </visual>
-
     </link>
+    <static>0</static>
+    <allow_auto_disable>1</allow_auto_disable>
   </model>
 </sdf>

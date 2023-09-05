@@ -1,32 +1,43 @@
 <?xml version="1.0"?>
-
 <!-- 
 *****************************************************************************************
 *
 *        =============================================
-*           Cosmo Logistic (CL) Theme (eYRC 2023-24)
+*                  TBD Theme (eYRC 2023-24)
 *        =============================================
 *
 *
-*  Filename:			        eyantra_warehouse.world
-*  Description:           Following world file describes warehouse world for gazebo environment.
-*  Created:				        12/07/2023
-*  Last Modified:	        12/07/2023
-*  Modified by:           Amit
-*  Author:				        e-Yantra Team
-*  Copyright (c):         2023 eYantra IITB 
+*  Filename:			eyantra_warehouse.world
+*  Created:				12/07/2023
+*  Last Modified:	12/07/2023
+*  Modified by:   Amit
+*  Author:				e-Yantra Team
 *  
 *****************************************************************************************
- -->
-
+-->
 <sdf version="1.6">
   <world name="default">
+	<!-- <physics type="ode">
+		<max_step_size>0.002</max_step_size>
+		<real_time_factor>1</real_time_factor>
+		<real_time_update_rate>1000</real_time_update_rate>
+		<ode>
+			<solver>
+				<iters>75</iters>
+				<island_threads>4</island_threads>
+			</solver>
+			<constraints>
+				<contact_surface_layer>0.005</contact_surface_layer>
+			</constraints>
+		</ode>
+	</physics> -->
 
     <gui>
       <camera name="user_default">
         <pose>-24.307 -9.572 4.851 0 0.071 0.316</pose>
       </camera>
     </gui>
+    <!-- <plugin name="ros_link_attacher_plugin" filename="libgazebo_ros_link_attacher.so"/> -->
 
     <light name="light0" type="directional">
       <pose frame="">0 -18.818 8 0.75 -0 0</pose>
@@ -101,12 +112,11 @@
       <pose>0 0 -0.21 0 0 0</pose>
 	</include>
 
-  
 
   <include>
       <uri>model://rack</uri>
       <name>rack1</name>
-      <pose>1.37 4.31 0.1 0 -0 -1.57</pose>
+      <pose>1.37 4.31 0.1 0 -0 3.14</pose>
 	</include>
 
 
@@ -116,70 +126,53 @@
       <pose>1.37 4.31 1.41 0 -0 3.14</pose>
 	</include>
 
-  <include>
-      <uri>model://rack_base</uri>
-      <name>rack_base2</name>
-      <pose>-4.28 3.74 0.004003 0 -0 0</pose>
-	</include>
 
   <include>
       <uri>model://rack</uri>
       <name>rack2</name>
-      <pose>-4.28 3.74 0.1 0 -0 0</pose>
+      <pose>-4.28 3.74 0.1 0 -0 -1.57</pose>
 	</include>
 
-  <include>
-      <uri>model://package_box</uri>
-      <name>package_box_2</name>
-      <pose>-4.28 3.74 1.11 0 -0 -1.57</pose>
-	</include>
 
   <include>
       <uri>model://rack</uri>
       <name>rack3</name>
-      <pose>-3.37 4.53 0.004003 0 -0 1.57</pose>
+      <pose>-3.37 4.53 0.004003 0 -0 0.0</pose>
 	</include>
+
 
   <include>
       <uri>model://rack</uri>
       <name>rack4</name>
-      <pose>-3.59225 -8.88893 0.004003 0 0 1.57</pose>
+      <pose>-3.59225 -8.88893 0.004003 0 0 0.0</pose>
 	</include>
+
 
   <include>
       <uri>model://rack</uri>
       <name>rack5</name>
-      <pose>-4.072 -8.0 0.004003 0 0 3.14</pose>
+      <pose>-4.072 -8.0 0.004003 0 0 1.57</pose>
 	</include>
+
 
   <include>
       <uri>model://rack</uri>
       <name>rack6</name>
-      <pose>1.1604 -9.05174 0.004003 0 0 -1.57</pose>
+      <pose>1.1604 -9.05174 0.004003 0 0 3.14</pose>
 	</include>
 
-  <include>
-      <uri>model://rack_base</uri>
-      <name>rack_base7</name>
-      <pose>1.85586 -8.20426 0.004003 0 -0 3.14</pose>
-	</include>
 
   <include>
       <uri>model://rack</uri>
       <name>rack7</name>
-      <pose>1.85586 -8.20426 0.1 0 -0 3.14</pose>
+      <pose>1.85586 -8.20426 0.1 0 -0 1.57</pose>
 	</include>
 
-  <include>
-      <uri>model://package_box</uri>
-      <name>package_box_7</name>
-      <pose>1.85586 -8.20426 0.800000 0 -0 1.57</pose>
-	</include>
 
   <include>
       <uri>model://rack</uri>
       <name>rack8</name>
-      <pose>2.19 3.44 0 0 -0 0</pose>
+      <pose>2.19 3.44 0 0 -0 -1.57</pose>
 	</include>
 
   <include>
@@ -199,6 +192,8 @@
       <name>palletjab</name>
       <pose>-2.97 -0.21 0 0 -0 -1.29</pose>
 	</include>
+
+  <plugin name="gazebo_link_attacher" filename="libgazebo_link_attacher.so"/>
 
   </world>
 </sdf>
