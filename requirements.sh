@@ -42,7 +42,4 @@ echo -e "\e[34mUpdating SkyX_Moon.fragment and SkyX_Moon.png for gazebo environm
 sudo cp eyantra_warehouse/config/SkyX_Moon.fragment /usr/share/gazebo-11/media/skyx/SkyX_Moon.fragment
 sudo cp eyantra_warehouse/config/SkyX_Moon.png /usr/share/gazebo-11/media/skyx/SkyX_Moon.png
 
-echo -e "\e[34mSourcing gazebo setup file...\e[0m"
-echo "source /usr/share/gazebo-11/setup.bash" >> ~/.bashrc
-
 echo -e "\e[32m---------------------------------\nSetup complete!\n---------------------------------\n\e[0m"
