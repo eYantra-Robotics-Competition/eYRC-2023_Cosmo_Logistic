@@ -41,6 +41,7 @@ endif()
 install(
   DIRECTORY
     launch
+    worlds
     models
     meshes
     plugins
@@ -48,5 +49,15 @@ install(
     share/${PROJECT_NAME}/
 )
 
+install(
+  PROGRAMS
+  launch/spawn_robot.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install(PROGRAMS
+
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 ament_package()

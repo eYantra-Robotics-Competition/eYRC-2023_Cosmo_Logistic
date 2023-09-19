@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <gazebo>
+    <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+    <parameters>$(find ur_description)/config/ros_controllers.yaml</parameters> 
+    </plugin>  
+  </gazebo>
+
+</robot>

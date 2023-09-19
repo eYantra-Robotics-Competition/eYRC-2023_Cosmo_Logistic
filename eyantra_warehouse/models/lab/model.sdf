@@ -1,0 +1,31 @@
+<?xml version ="1.0"?>
+<sdf version="1.6">
+  <model name="lab">
+    <static>true</static>
+    <link name="link">
+      <collision name="colision1">
+        <pose>-3 8 0 0 0 0 </pose>
+        <geometry>
+	
+          <mesh>
+            <uri>model://lab/meshes/lab.dae</uri>
+	    
+          </mesh>
+        </geometry>
+      
+      </collision>
+
+      <visual name="visual1">
+        <cast_shadows>false</cast_shadows>
+	<pose> -3 8 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://lab/meshes/lab.dae</uri>
+	   
+          </mesh>
+        </geometry>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

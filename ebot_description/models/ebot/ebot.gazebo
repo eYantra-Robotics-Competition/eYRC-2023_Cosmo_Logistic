@@ -1,23 +1,20 @@
 <?xml version="1.0"?>
-
 <!-- 
 *****************************************************************************************
 *
 *        =============================================
-*           Cosmo Logistic (CL) Theme (eYRC 2023-24)
+*                  CL Theme (eYRC 2023-24)
 *        =============================================
 *
 *
-*  Filename:			        ebot.gazebo
-*  Description:           Following gazebo file describes ebots sensor/plugins (mobile robot) and is optimized to work with gazebo simulator  
-*  Created:				        12/07/2023
-*  Last Modified:	        12/07/2023
-*  Modified by:           Amit
-*  Author:				        e-Yantra Team
-*  Copyright (c):         2023 eYantra IITB 
+*  Filename:			ebot.gazebo
+*  Created:				2021
+*  Last Modified:	27/08/2023
+*  Modified by:   Ravikumar
+*  Author:				e-Yantra Team
 *  
-*****************************************************************************************
- -->
+***************************************************************************************** 
+-->
 
 <robot name="ebot" 
   xmlns:xacro="http://www.ros.org/wiki/xacro">
@@ -68,22 +65,45 @@
       <publish_odom>true</publish_odom>
       <publish_odom_tf>true</publish_odom_tf>
       <publish_wheel_tf>true</publish_wheel_tf>
-      <update_rate>60.0</update_rate>
+      <update_rate>100.0</update_rate>
       <!-- <update_rate>100.0</update_rate> -->
     </plugin>
   </gazebo>
 
   <gazebo reference="FWL">
     <material>Gazebo/Black</material>
+    <kp>1e15</kp>
+    <kd>1e14</kd>
+    <!-- <mu1>1.0</mu1>
+    <mu2>1.0</mu2> -->
+    <fdir1>0 0 1</fdir1>
   </gazebo>
+
     <gazebo reference="FWR">
     <material>Gazebo/Black</material>
+    <kp>1e15</kp>
+    <kd>1e14</kd>
+    <!-- <mu1>1.0</mu1>
+    <mu2>1.0</mu2> -->
+    <fdir1>0 0 1</fdir1>
   </gazebo>
+
     <gazebo reference="RWL">
     <material>Gazebo/Black</material>
+    <kp>1e15</kp>
+    <kd>1e14</kd>
+    <!-- <mu1>1.0</mu1>
+    <mu2>1.0</mu2> -->
+    <fdir1>0 0 1</fdir1>
   </gazebo>
+
     <gazebo reference="RWR">
     <material>Gazebo/Black</material>
+    <kp>1e15</kp>
+    <kd>1e14</kd>
+    <!-- <mu1>1.0</mu1>
+    <mu2>1.0</mu2> -->
+    <fdir1>0 0 1</fdir1>
   </gazebo>
 
    <gazebo reference="laser">
@@ -169,6 +189,64 @@
   </gazebo>
   </xacro:macro>
 
+  <!-- <link name="ultrasonic_rl">
+    <gravity>0</gravity>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.10 0.10"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.10 0.05"/>
+      </geometry>
+      <material name="transparent">
+        <color rgba="0 0 0 0"/>
+      </material>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000000 0.000000 0.000000"/>
+      <mass value="0.0001"/>
+      <inertia ixx="1e-08" ixy="0" ixz="0" iyy="1e-08" iyz="0" izz="1e-08"/>
+    </inertial>
+  </link>
+  <joint name="ultrasonic_rl_joint" type="fixed">
+    <parent link="RUS5" />
+    <child link="ultrasonic_rl" />
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+  </joint>
+
+  <link name="ultrasonic_rr">
+    <gravity>0</gravity>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.10 0.10"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.10 0.05"/>
+      </geometry>
+      <material name="transparent">
+        <color rgba="0 0 0 0"/>
+      </material>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000000 0.000000 0.000000"/>
+      <mass value="0.0001"/>
+      <inertia ixx="1e-08" ixy="0" ixz="0" iyy="1e-08" iyz="0" izz="1e-08"/>
+    </inertial>
+  </link>
+  <joint name="ultrasonic_rr_joint" type="fixed">
+    <parent link="RUS6" />
+    <child link="ultrasonic_rr" />
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+  </joint> -->
+
   <xacro:ultrasonic_sensor name="ultrasonic_rl"/> 
   <xacro:ultrasonic_sensor name="ultrasonic_rr"/> 
 
@@ -197,5 +275,42 @@
     </sensor>
   </gazebo>
 
+  <!-- camera -->
+  <!-- <gazebo reference="camera_link">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>30.0</updateRate>
+        <cameraName>ebot/camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo> -->
 
 </robot>

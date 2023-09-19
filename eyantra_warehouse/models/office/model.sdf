@@ -1,0 +1,29 @@
+<?xml version ="1.0"?>
+<sdf version="1.6">
+  <model name="office">
+    <static>true</static>
+    <link name="link">
+      <collision name="colision1">
+        
+        <geometry>
+          <mesh>
+            <uri>model://office/meshes/SB_fixed.obj</uri>
+	    
+          </mesh>
+        </geometry>
+      
+      </collision>
+
+      <visual name="visual1">
+        <cast_shadows>true</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://office/meshes/SB_fixed.obj</uri>
+	   
+          </mesh>
+        </geometry>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

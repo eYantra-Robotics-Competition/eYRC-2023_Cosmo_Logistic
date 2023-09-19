@@ -34,10 +34,12 @@ endif()
 
 install(
   DIRECTORY
+    launch
     worlds
     models
-    meshes
+#    meshes
     config
+#   plugins
   DESTINATION
     share/${PROJECT_NAME}/
 )

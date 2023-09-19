@@ -85,6 +85,3 @@ ros2 launch aws_robomaker_small_warehouse_world small_warehouse.launch.py
 ## Notes
 - Lighting might vary on different system(s) (e.g brighter on system without CPU and darker on system with GPU)
 - Adjust lighting parameters in .world file as you need
-
-
-## We have delinked this repo for solely eYRC-23-24 purpose
