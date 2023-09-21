@@ -10,6 +10,8 @@ This repository contains three packages (as of now):
 
 ### Task 0
 
+Use- `git checkout tags/v1.0.1` for Task 0
+
 To launch task 0, use this command-
 
 ```sh
