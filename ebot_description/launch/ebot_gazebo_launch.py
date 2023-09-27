@@ -36,7 +36,7 @@ def get_package_file(package, file_path):
 def generate_launch_description():
     pkg_share = launch_ros.substitutions.FindPackageShare(package='ebot_description').find('ebot_description')
 
-    xacro_file_ebot = os.path.join(pkg_share, 'models/','ebot/', 'ebot_trolley.xacro')
+    xacro_file_ebot = os.path.join(pkg_share, 'models/','ebot/', 'ebot_description.xacro')
     assert os.path.exists(xacro_file_ebot), "The box_bot.xacro doesnt exist in "+str(xacro_file_ebot)
     robot_description_config_ebot = xacro.process_file(xacro_file_ebot)
     robot_description_ebot = robot_description_config_ebot.toxml()
