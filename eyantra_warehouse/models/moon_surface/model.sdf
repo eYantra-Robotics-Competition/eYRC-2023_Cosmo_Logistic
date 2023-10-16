@@ -22,14 +22,6 @@
     <link name="link">
       <pose>0 0 0.003 0 0 0</pose>
 
-      <!-- Removing collision of moon surface since we don't need it for performance -->
-      
-      <!-- <collision name="collision1">
-          <geometry>
-          <mesh><uri>model://moon_surface/meshes/moon_surface.dae</uri></mesh>
-            <box><size>100 100 0.5</size></box>
-          </geometry>      
-      </collision> -->
 
 
       <visual name="visual1">

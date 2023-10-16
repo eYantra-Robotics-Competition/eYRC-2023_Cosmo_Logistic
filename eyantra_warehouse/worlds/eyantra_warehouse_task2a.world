@@ -119,11 +119,11 @@
 	</include>
 
   <!-- NOISE BOX -->
-  <include>
+  <!-- <include>
       <uri>model://boxes/box_1</uri>
       <name>box1_dup</name>
       <pose>-4 -2.6 3 0 0 0</pose>
-	</include>
+	</include> -->
   <!-- NOISE BOX -->
 
 
@@ -137,7 +137,7 @@
   <include>
       <uri>model://boxes/box_1</uri>
       <name>box1</name>
-      <pose>1.13 -2.455 1.25 0 0 0.0</pose>
+      <pose>1.13 -2.455 0.89 0 0 0.0</pose>
 	</include>
 
   <!-- RACK 1 -->
@@ -152,7 +152,7 @@
   <include>
       <uri>model://boxes/box_3</uri>
       <name>box3</name>
-      <pose>1.35 -1.865 1.25 0 0 -1.57</pose>
+      <pose>1.35 -1.865 0.51 0 0 -1.57</pose>
 	</include>
 
   <include>
@@ -217,6 +217,28 @@
       <name>palletjab</name>
       <pose>-2.97 -0.21 0 0 -0 -1.29</pose>
 	</include> 
+
+  <include>
+      <uri>model://arm_base</uri>
+      <name>arm_base</name>
+      <pose>1.78 -2.4 0.253 0 -0 0.0</pose>
+	</include>
+
+  <include>
+      <uri>model://table</uri>
+      <name>table</name>
+      <pose>2.4 -2.45 0 0 -0 0.0</pose>
+	</include>
+
+  <plugin name="gazebo_link_ur5_attacher" filename="libgazebo_link_ur5_attacher.so"/>
+
+  <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <ros>
+        <namespace>/_makeit</namespace>
+      </ros>
+
+      <update_rate>1.0</update_rate>
+  </plugin>
 
   </world>
 </sdf>

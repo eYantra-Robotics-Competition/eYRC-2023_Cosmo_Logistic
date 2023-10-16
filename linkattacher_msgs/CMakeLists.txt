@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(ebot_description)
+project(linkattacher_msgs)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -17,16 +17,9 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(ament_cmake_python REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
-find_package(rclcpp REQUIRED)
-find_package(rclpy REQUIRED)
-find_package(urdf REQUIRED)
-find_package(xacro REQUIRED)
-find_package(ebot_docking REQUIRED)
-
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -39,22 +32,18 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-install(
-  DIRECTORY
-    launch
-    worlds
-    models
-    meshes
-    plugins
-  DESTINATION
-    share/${PROJECT_NAME}/
-)
+############## ROS2 .srv ##############
 
 install(
-  PROGRAMS
-  DESTINATION lib/${PROJECT_NAME}
+  DIRECTORY  
+    srv
+  DESTINATION 
+    share/${PROJECT_NAME}
 )
-
-
+find_package(rosidl_default_generators REQUIRED)
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "srv/AttachLink.srv"
+  "srv/DetachLink.srv"
+)
 
 ament_package()

@@ -3,7 +3,7 @@
 *****************************************************************************************
 *
 *        =============================================
-*                  CL Theme (eYRC 2023-24)
+*                    CL Theme (eYRC 2023-24)
 *        =============================================
 *
 *
@@ -114,6 +114,80 @@
     <material>Gazebo/Black</material>
   </gazebo>
 
+  <!-- <link name="ebot_electromagnet">
+    <gravity>0</gravity>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.10 0.10"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.10 0.05"/>
+      </geometry>
+      <material name="transparent">
+        <color rgba="0 0 0 0"/>
+      </material>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000000 0.000000 0.000000"/>
+      <mass value="0.0001"/>
+      <inertia ixx="1e-08" ixy="0" ixz="0" iyy="1e-08" iyz="0" izz="1e-08"/>
+    </inertial>
+  </link>
+  <joint name="ebot_electromagnet_joint" type="fixed">
+    <parent link="ebot_base" />
+    <child link="ebot_electromagnet" />
+    <origin rpy="0 0 0" xyz="0.15 0.0 0.265" />
+  </joint>
+
+  <link name="ebot_vacuum_gripper">
+    <gravity>0</gravity>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+      <material name="transparent">
+        <color rgba="0 0 0 0"/>
+      </material>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000000 0.000000 0.000000"/>
+      <mass value="0.0001"/>
+      <inertia ixx="1e-08" ixy="0" ixz="0" iyy="1e-08" iyz="0" izz="1e-08"/>
+    </inertial>
+  </link>
+  <joint name="ebot_vacuum_gripper_joint" type="revolute">
+    <parent link="ebot_electromagnet" />
+    <child link="ebot_vacuum_gripper" />
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+    <limit effort="50" velocity="1.0" lower="0" upper="0" />
+  </joint>
+
+
+  <gazebo>
+    <plugin name="gazebo_ros_vacuum_gripper" filename="/home/architter/ws_eyrc_23_24_kb/install/gazebo_plugins/lib/libgazebo_ros_vacuum_gripper.so">
+    <plugin name="gazebo_ros_vacuum_gripper" filename="libgazebo_ros_vacuum_gripper.so">
+      <robotNamespace>/ebot/vacuum_gripper</robotNamespace>
+      <topicName>vacuum_grasp</topicName>
+      <link_name>ebot_vacuum_gripper</link_name>
+        <fixed>moon_surface</fixed>
+          <max_distance>1.0</max_distance>
+    </plugin>
+  </gazebo> -->
+
+  <!-- <plugin name="gazebo_link_attacher" filename="/home/architter/ws_eyrc_23_24_kb/install/ros2_linkattacher/lib/libgazebo_link_attacher.so"/> -->
+  <!-- <plugin name="gazebo_link_attacher" filename="libgazebo_link_attacher.so"/> -->
+
 
 <!-- lidar sensor -->
     <gazebo reference="laser">
@@ -149,7 +223,7 @@
     <gazebo reference="${name}">
     <sensor type="ray" name="${name}">
       <pose>0 0 0 0 0 0</pose>
-      <visualize>false</visualize>
+      <visualize>true</visualize>
       <update_rate>5</update_rate>
       <ray>
         <scan>

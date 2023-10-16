@@ -5,7 +5,7 @@
 *****************************************************************************************
 *
 *        =============================================
-*                  CL Theme (eYRC 2023-24)
+*                  TBD Theme (eYRC 2023-24)
 *        =============================================
 *
 *
@@ -14,7 +14,7 @@
 *  Created:				16/07/2023
 *  Modified by:         Archit, Jaison
 *  Author:				e-Yantra Team
-*  Copyright (c) 2020 eYantra IITB
+*  Copyright (c) 2023 e-Yantra IITB
 *****************************************************************************************
 '''
 
@@ -35,7 +35,7 @@ def generate_launch_description():
 
     start_world = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(get_package_share_directory('ebot_description'), 'launch', 'start_world_launch.py'),
+            os.path.join(get_package_share_directory('ur_description'), 'launch', 'start_ur_world_launch.py'),
         )
     )    
 

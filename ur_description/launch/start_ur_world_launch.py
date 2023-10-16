@@ -5,15 +5,15 @@
 *****************************************************************************************
 *
 *        =============================================
-*                  CL Theme (eYRC 2023-24)
+*                  TBD Theme (eYRC 2023-24)
 *        =============================================
 *
 *
 *  Filename:			start_world_launch.py
 *  Description:         Use this file to launch e-yantra warehouse world in gazebo simulator 
 *  Created:				12/07/2023
-*  Last Modified:	    12/10/2023
-*  Modified by:         Ravikumar
+*  Last Modified:	    12/07/2023
+*  Modified by:         Amit
 *  Author:				e-Yantra Team
 *  
 *****************************************************************************************
@@ -60,11 +60,15 @@ def generate_launch_description():
         )
     )    
 
+    spawner_box = Node(package='ur_description',
+                       executable='spawner_box_com.py')
+
     return LaunchDescription([
         DeclareLaunchArgument(
           'world',
-          default_value=[os.path.join(pkg_models_dir, 'worlds', 'eyantra_warehouse_task2b.world'), ''], # Change name of world file if required.
+          default_value=[os.path.join(pkg_models_dir, 'worlds', 'eyantra_warehouse_task2a.world'), ''], # Change name of world file if required.
           description='SDF world file'),
-        gazebo
+        gazebo,
+        spawner_box
         # ExecuteProcess(cmd=['gazebo', '--verbose', '-s', 'libgazebo_ros_factory.so'], output='screen'),
     ])

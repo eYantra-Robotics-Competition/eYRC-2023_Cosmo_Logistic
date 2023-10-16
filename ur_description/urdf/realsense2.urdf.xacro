@@ -169,7 +169,7 @@
         <prefix>camera</prefix>
         <depthUpdateRate>15.0</depthUpdateRate>
         <colorUpdateRate>15.0</colorUpdateRate>
-        <infraredUpdateRate>1.0</infraredUpdateRate>
+        <infraredUpdateRate>15.0</infraredUpdateRate>
         <depthTopicName>camera/aligned_depth_to_color/image_raw</depthTopicName>
         <depthCameraInfoTopicName>camera/depth/camera_info</depthCameraInfoTopicName>
         <colorTopicName>camera/color/image_raw</colorTopicName>
@@ -183,11 +183,11 @@
         <infrared1OpticalframeName>camera_left_ir_optical_frame</infrared1OpticalframeName>
         <infrared2OpticalframeName>camera_right_ir_optical_frame</infrared2OpticalframeName>
         <rangeMinDepth>0.1</rangeMinDepth>
-        <rangeMaxDepth>10.0</rangeMaxDepth>
+        <rangeMaxDepth>2.0</rangeMaxDepth>
         <pointCloud>true</pointCloud>
         <pointCloudTopicName>camera/depth/color/points</pointCloudTopicName>
         <pointCloudCutoff>0.1</pointCloudCutoff>
-        <pointCloudCutoffMax>10</pointCloudCutoffMax>
+        <pointCloudCutoffMax>2.0</pointCloudCutoffMax>
   </plugin>
 
   </gazebo>

@@ -23,34 +23,6 @@ Basic Python interface for MoveIt 2 built on top of ROS 2 actions and services.
 </table>
 </div>
 
-## Instructions
-
-### Dependencies
-
-These are the primary dependencies required to use this project.
-
-- ROS 2 [Galactic](https://docs.ros.org/en/galactic/Installation.html), [Humble](https://docs.ros.org/en/humble/Installation.html) or [Rolling](https://docs.ros.org/en/rolling/Installation.html) (tested June 2022)
-- [MoveIt 2](https://moveit.ros.org/install-moveit2/binary) corresponding to the selected ROS 2 distribution
-
-All additional dependencies are installed via [rosdep](https://wiki.ros.org/rosdep) during the building process below.
-
-### Building
-
-Clone this repository, install dependencies and build with [colcon](https://colcon.readthedocs.io).
-
-```bash
-# Clone this repository into your favourite ROS 2 workspace
-git clone https://github.com/AndrejOrsula/pymoveit2.git
-# Install dependencies
-rosdep install -y -r -i --rosdistro ${ROS_DISTRO} --from-paths .
-# Build
-colcon build --merge-install --symlink-install --cmake-args "-DCMAKE_BUILD_TYPE=Release"
-```
-
-### Sourcing
-
-Before utilising this package, remember to source the ROS 2 workspace.
-
 ```bash
 source install/local_setup.bash
 ```
