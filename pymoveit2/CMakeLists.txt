@@ -18,5 +18,10 @@ install(PROGRAMS
     DESTINATION lib/${PROJECT_NAME}
 )
 
+install(
+  DIRECTORY examples/assets
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 # Setup the project
 ament_package()
