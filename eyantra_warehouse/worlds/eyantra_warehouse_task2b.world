@@ -221,8 +221,8 @@
 	</include>
 
   <include>
-      <uri>model://table</uri>
-      <name>table</name>
+      <uri>model://drop_table</uri>
+      <name>drop_table</name>
       <pose>2.4 -2.45 0 0 -0 0.0</pose>
 	</include>
 

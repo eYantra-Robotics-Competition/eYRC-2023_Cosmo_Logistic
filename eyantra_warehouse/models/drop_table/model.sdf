@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <sdf version='1.7'>
-  <model name='table'>
+  <model name='drop_table'>
     <link name='link'>
       <inertial>
         <mass>1</mass>
@@ -23,7 +23,7 @@
         <cast_shadows>0</cast_shadows>
         <geometry>
           <mesh>
-            <uri>model://table/meshes/table.dae</uri>
+            <uri>model://drop_table/meshes/table.dae</uri>
           </mesh>
         </geometry>
         <material>
