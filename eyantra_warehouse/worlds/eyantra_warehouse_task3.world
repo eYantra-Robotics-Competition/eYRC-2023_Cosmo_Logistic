@@ -227,6 +227,7 @@
 	</include>
 
   <plugin name="gazebo_link_attacher" filename="libgazebo_link_attacher.so"/>
+  <plugin name="gazebo_link_ur5_attacher" filename="libgazebo_link_ur5_attacher.so"/>
 
   </world>
 </sdf>
