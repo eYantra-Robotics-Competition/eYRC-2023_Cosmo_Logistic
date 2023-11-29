@@ -10,7 +10,7 @@
 *  Filename:			eyantra_warehouse.world
 *  Created:				12/07/2023
 *  Last Modified:	12/09/2023
-*  Modified by:   Ravi
+*  Modified by:   Ravi, Jaison
 *  Author:				e-Yantra Team
 *  
 *****************************************************************************************
@@ -159,7 +159,7 @@
 	</include>
 
    <include>
-      <uri>model://boxes/box_1</uri>
+      <uri>model://boxes/box_3</uri>
       <name>box3</name>
       <pose>2.03 -8.17 1.35 0 -0 -1.57</pose>
 	</include>
