@@ -161,46 +161,18 @@
   <include>
       <uri>model://rack</uri>
       <name>rack3</name>
-      <pose>1.6 -1.54 0.1 0 -0 1.57</pose>
+      <!-- <pose>1.6373 -1.2511 6.1 0 -0 1.57</pose> -->
+      <pose>1.600 -1.248 0.07 0 -0 1.57</pose>
 	</include>
 
    <include>
       <uri>model://boxes/box_3</uri>
       <name>box3</name>
-      <pose>1.6 -1.63 1.35 0 -0 -1.57</pose>
+      <pose>1.6 -1.318 1.30 0 -0 -1.57</pose>
 	</include>
 
   <!-- RACK 3 -->
-<!-- 
-  <include>
-      <uri>model://rack</uri>
-      <name>rack4</name>
-      <pose>0.99 -8.86 0.1 0 -0 3.14</pose>
-	</include>
 
-  <include>
-      <uri>model://rack</uri>
-      <name>rack5</name>
-      <pose>-3.46 -8.89 0.1 0 -0 0.0</pose>
-	</include>
-
-  <include>
-      <uri>model://rack</uri>
-      <name>rack6</name>
-      <pose>-4.22 -7.85 0.1 0 -0 1.57</pose>
-	</include>
-
-  <include>
-      <uri>model://rack</uri>
-      <name>rack7</name>
-      <pose>-4.28 3.52 0.1 0 -0 -1.57</pose>
-	</include>
-
-  <include>
-      <uri>model://rack</uri>
-      <name>rack8</name>
-      <pose>-3.24 4.28 0.1 0 -0 0.0</pose>
-	</include> -->
 
   <include>
       <uri>model://aws_robomaker_warehouse_ClutteringC_01</uri>
@@ -227,8 +199,8 @@
 	</include>
 
   <include>
-      <uri>model://table</uri>
-      <name>table</name>
+      <uri>model://drop_table</uri>
+      <name>drop_table</name>
       <pose>2.4 -2.45 0 0 -0 0.0</pose>
 	</include>
 

@@ -1286,9 +1286,9 @@
         <pose>0 0 0 0 -0 0</pose>
         <mass>1.87</mass>
         <inertia>
-          <ixx>0.01857</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
+          <ixx>2.02</ixx>
+          <ixy>-8.09</ixy>
+          <ixz>1.57</ixz>
           <iyy>0.015598</iyy>
           <iyz>0</iyz>
           <izz>0.00305</izz>
@@ -1297,7 +1297,7 @@
       <self_collide>0</self_collide>
       <enable_wind>0</enable_wind>
       <kinematic>0</kinematic>
-      <pose>12.4512 0.610106 0 0 0 -1.57</pose>
+      <pose>5.610000 0.190000 0 -0 0 4.71</pose>
       <gravity>1</gravity>
       <visual name='visual_1'>
         <cast_shadows>0</cast_shadows>
